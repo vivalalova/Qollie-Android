@@ -1,0 +1,67 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="55dp"
+	xmlns:tool="http://schemas.android.com/tools"
+	android:layout_alignParentTop="true"
+	android:background="@android:color/white"
+	>
+
+	<ImageButton
+		android:id="@+id/imbLeft"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerVertical="true"
+		android:background="@android:color/transparent"
+		android:padding="20dp"
+		android:src="@mipmap/icon_back"
+		/>
+
+	<ImageButton
+		android:id="@+id/btnFunction"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"
+		android:layout_centerVertical="true"
+		android:background="@android:color/transparent"
+		android:padding="20dp"
+		android:src="@mipmap/icon_refresh" />
+
+	<TextView
+		android:id="@+id/txtActionBarTitle"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_toRightOf="@+id/imbLeft"
+		android:layout_toLeftOf="@+id/btnFunction"
+		android:gravity="center"
+		android:ellipsize="end"
+		android:maxLines="1"
+		android:textSize="17sp"
+		android:textColor="@android:color/black"
+		tool:text="12"
+		 />
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:layout_below="@+id/imbLeft"
+		android:background="@color/light_gray"
+		/>
+</RelativeLayout>
+	<!--private void initBackTextTranslation()-->
+	<!--{-->
+	<!--View viewBackTextTranslation = (View) rootView.findViewById(R.id.viewBackTextTranslation);-->
+	<!--ImageButton btnLeft = (ImageButton) viewBackTextTranslation.findViewById(R.id.btnLeft);-->
+	<!--TextView txtActionBarTitle = (TextView) viewBackTextTranslation-->
+	<!--.findViewById(R.id.txtActionBarTitle);-->
+	<!--btnLeft.setOnClickListener(new View.OnClickListener()-->
+	<!--{-->
+	<!--@Override-->
+	<!--public void onClick(View v)-->
+	<!--{-->
+	<!--if (cancelListener != null)-->
+	<!--{-->
+	<!--cancelListener.onClickBack();-->
+	<!--}-->
+	<!--}-->
+	<!--});-->
+	<!--txtActionBarTitle.setText(titleText);-->
+	<!--}-->
