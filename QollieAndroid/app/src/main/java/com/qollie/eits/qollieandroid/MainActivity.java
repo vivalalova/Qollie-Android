@@ -23,6 +23,10 @@ import com.viewpagerindicator.CirclePageIndicator;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
+
+
 public class MainActivity extends AppCompatActivity {
 
     public static final String webNameKey = "WED_NAME";
@@ -41,10 +45,11 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private TextView txtStep;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Fabric.with(MainActivity.this, new Crashlytics());
         setContentView(R.layout.activity_main);
         initViewList();
         initView();
