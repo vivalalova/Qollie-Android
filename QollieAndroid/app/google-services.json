@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "745678660351",
+    "firebase_url": "https://qollie-c0c66.firebaseio.com",
+    "project_id": "qollie-c0c66",
+    "storage_bucket": "qollie-c0c66.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:745678660351:android:c2e3b161e31b3f36",
+        "android_client_info": {
+          "package_name": "com.qollie.eits.qollieandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "745678660351-ac6h930ckchdgufrp8i28iuq0mom191f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.qollie.eits.qollieandroid",
+            "certificate_hash": "61525d225fa23806ed24b1056e57c0166f3798ab"
+          }
+        },
+        {
+          "client_id": "745678660351-26tbrj96jm4sthqh67fd9tnu5np0hncu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgua2jc3qfVta-xW-I-EGceUjXFmt27_s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "745678660351-26tbrj96jm4sthqh67fd9tnu5np0hncu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
