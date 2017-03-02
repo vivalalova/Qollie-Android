@@ -127,7 +127,8 @@ public class MainActivity extends AppCompatActivity {
         String sharedText = intent.getStringExtra(Intent.EXTRA_TEXT);
         if (sharedText != null) {
             Log.e("sharedText", "" + sharedText);
-            String strCompany = WebStation.getCompany(sharedText);
+            WebStation webStation=new WebStation();
+            String strCompany = webStation.getCompanyTitle(MainActivity.this,sharedText);
 
             Intent intent2 = new Intent(MainActivity.this, CompanyWebActivity.class);
             intent2.putExtra(webNameKey, strCompany);
