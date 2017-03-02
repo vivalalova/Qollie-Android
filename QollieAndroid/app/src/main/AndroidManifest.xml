@@ -25,7 +25,9 @@
 
         <activity
             android:name=".CompanyWebActivity"/>
-
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="ae32a781ec002f65fd6900f49c380cfbd17c7b86" />
     </application>
 
 </manifest>
