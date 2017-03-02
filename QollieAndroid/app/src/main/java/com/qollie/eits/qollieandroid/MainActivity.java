@@ -79,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
                 setShowGuide(MainActivity.this, false);
                 rrGuide.setVisibility(View.GONE);
                 webView.setVisibility(View.VISIBLE);
+
+
                 mFirebaseAnalytics.setUserProperty(getString(R.string.ga_action_click), getString(R.string.ga_btn_skip));
             }
         });
@@ -116,9 +118,9 @@ public class MainActivity extends AppCompatActivity {
             }
         } else {
             if (getShowGuide(MainActivity.this)) {
-                mFirebaseAnalytics.setCurrentScreen(this, getString(R.string.ga_page_guide_1), null);
+                mFirebaseAnalytics.setCurrentScreen(this, getString(R.string.ga_page_guide_1), this.getClass().getSimpleName());
             } else {
-                mFirebaseAnalytics.setCurrentScreen(MainActivity.this, getString(R.string.ga_page_home), null);
+                mFirebaseAnalytics.setCurrentScreen(MainActivity.this, getString(R.string.ga_page_home), this.getClass().getSimpleName());
             }
         }
     }
@@ -218,12 +220,12 @@ public class MainActivity extends AppCompatActivity {
                 switch (position) {
                     case 0:
 
-                        mFirebaseAnalytics.setCurrentScreen(MainActivity.this, getString(R.string.ga_page_guide_1), null);
+                        mFirebaseAnalytics.setCurrentScreen(MainActivity.this, getString(R.string.ga_page_guide_1), this.getClass().getSimpleName());
                         break;
 
                     case 1:
 
-                        mFirebaseAnalytics.setCurrentScreen(MainActivity.this, getString(R.string.ga_page_guide_2), null);
+                        mFirebaseAnalytics.setCurrentScreen(MainActivity.this, getString(R.string.ga_page_guide_2), this.getClass().getSimpleName());
                         break;
 
                 }

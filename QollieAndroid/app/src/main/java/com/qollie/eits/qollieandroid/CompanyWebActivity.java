@@ -36,7 +36,7 @@ public class CompanyWebActivity extends AppCompatActivity
 		getData();
 		initView();
 		setWebView();
-		mFirebaseAnalytics.setCurrentScreen(CompanyWebActivity.this, getString(R.string.ga_page_webview), null );
+		mFirebaseAnalytics.setCurrentScreen(CompanyWebActivity.this, getString(R.string.ga_page_webview), this.getClass().getSimpleName() );
 
 
 	}

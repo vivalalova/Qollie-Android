@@ -21,6 +21,10 @@ public class WebStation {
         //1111
         else if (shareText.contains(context.getString(R.string.domain_1111))) {
             strCompanyTitle = get1111CompanyTitle(shareText, context.getString(R.string.domain_1111));
+        }
+        //518
+        else if (shareText.contains(context.getString(R.string.domain_518))) {
+            strCompanyTitle = get518CompanyTitle(shareText);
         } else {
             strCompanyTitle = "";
         }
@@ -34,6 +38,34 @@ public class WebStation {
         return strCompanyTitle;
     }
 
+    private String get518CompanyTitle(String shareText) {
+
+        String[] shareArray = shareText.split("企業名稱：");
+
+        if (shareArray.length == 2) {
+            if (shareArray[1].contains("職缺名稱：")) {
+                String[] shareArray2 = shareArray[1].split("職缺名稱：");
+                if (shareArray2.length == 2) {
+                    return shareArray2[0];
+                }else {
+                    return "";
+                }
+            } else if (shareArray[1].contains("薪資待遇：")) {
+                String[] shareArray2 = shareArray[1].split("薪資待遇：");
+                if (shareArray2.length == 2) {
+                    return shareArray2[0];
+                }else {
+                    return "";
+                }
+            } else {
+                return "";
+            }
+        } else {
+
+            return "";
+        }
+    }
+
     private String get1111CompanyTitle(String shareText, String domain) {
         String[] shareArray = shareText.split(domain);
         if (shareArray.length == 2) {
@@ -43,7 +75,7 @@ public class WebStation {
                     String strCompany = "";
                     String[] shareArrayHasDash = shareArray2[1].split("‧");
                     for (int i = 0; i < shareArrayHasDash.length; i++) {
-                        if (shareArrayHasDash[i].contains("公司")) {
+                        if (shareArrayHasDash[i].contains("公司") || shareArrayHasDash[i].contains("企業")) {
 
                             strCompany = shareArrayHasDash[i];
                             i = shareArrayHasDash.length;
