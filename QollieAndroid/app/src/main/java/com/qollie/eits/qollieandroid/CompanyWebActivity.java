@@ -8,6 +8,7 @@ import android.webkit.WebView;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.qollie.eits.qollieandroid.webview.WebControl;
 
 public class CompanyWebActivity extends AppCompatActivity
@@ -22,15 +23,22 @@ public class CompanyWebActivity extends AppCompatActivity
 	private String webName = "";
 	private String webUrl = "";
 
+
+	private FirebaseAnalytics mFirebaseAnalytics;
 	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{
 
 		super.onCreate(savedInstanceState);
+
+		mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 		setParentContentView();
 		getData();
 		initView();
 		setWebView();
+		mFirebaseAnalytics.setCurrentScreen(CompanyWebActivity.this, getString(R.string.ga_page_webview), this.getClass().getSimpleName() );
+
+
 	}
 
 	public void setParentContentView()
@@ -62,6 +70,8 @@ public class CompanyWebActivity extends AppCompatActivity
 				@Override
 				public void onClick(View v)
 				{
+
+					mFirebaseAnalytics.setUserProperty(getString(R.string.ga_action_click), getString(R.string.ga_btn_back));
 					finish();
 				}
 			});
@@ -74,6 +84,8 @@ public class CompanyWebActivity extends AppCompatActivity
 			@Override
 			public void onClick(View v)
 			{
+
+				mFirebaseAnalytics.setUserProperty(getString(R.string.ga_action_click), getString(R.string.ga_btn_refresh));
 				webView.reload();
 			}
 		});
